@@ -35,6 +35,7 @@ import {
 import { act, fireEvent, screen } from '@testing-library/react';
 import React from 'react';
 import { EntityLayout } from './EntityLayout';
+import { rootRouteRef } from '../../routes';
 
 const mockEntity = {
   kind: 'MyKind',
@@ -65,6 +66,7 @@ describe('EntityLayout', () => {
       {
         mountedRoutes: {
           '/catalog/:namespace/:kind/:name': entityRouteRef,
+          '/catalog': rootRouteRef,
         },
       },
     );
@@ -96,6 +98,7 @@ describe('EntityLayout', () => {
       {
         mountedRoutes: {
           '/catalog/:namespace/:kind/:name': entityRouteRef,
+          '/catalog': rootRouteRef,
         },
       },
     );
@@ -119,6 +122,7 @@ describe('EntityLayout', () => {
       {
         mountedRoutes: {
           '/catalog/:namespace/:kind/:name': entityRouteRef,
+          '/catalog': rootRouteRef,
         },
       },
     );
@@ -145,6 +149,7 @@ describe('EntityLayout', () => {
       {
         mountedRoutes: {
           '/catalog/:namespace/:kind/:name': entityRouteRef,
+          '/catalog': rootRouteRef,
         },
       },
     );
@@ -177,6 +182,7 @@ describe('EntityLayout', () => {
       {
         mountedRoutes: {
           '/catalog/:namespace/:kind/:name': entityRouteRef,
+          '/catalog': rootRouteRef,
         },
       },
     );
@@ -224,6 +230,7 @@ describe('EntityLayout', () => {
       {
         mountedRoutes: {
           '/catalog/:namespace/:kind/:name': entityRouteRef,
+          '/catalog': rootRouteRef,
         },
       },
     );

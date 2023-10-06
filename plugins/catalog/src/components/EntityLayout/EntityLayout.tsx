@@ -34,6 +34,7 @@ import {
   IconComponent,
   useElementFilter,
   useRouteRefParams,
+  useRouteRef,
 } from '@backstage/core-plugin-api';
 import {
   EntityRefLinks,
@@ -49,6 +50,7 @@ import { Alert } from '@material-ui/lab';
 import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { EntityContextMenu } from '../EntityContextMenu/EntityContextMenu';
+import { rootRouteRef } from '../../routes';
 
 /** @public */
 export type EntityLayoutRouteProps = {
@@ -224,10 +226,11 @@ export const EntityLayout = (props: EntityLayoutProps) => {
   const [confirmationDialogOpen, setConfirmationDialogOpen] = useState(false);
   const [inspectionDialogOpen, setInspectionDialogOpen] = useState(false);
   const navigate = useNavigate();
+  const catalogRoute = useRouteRef(rootRouteRef);
   const cleanUpAfterRemoval = async () => {
     setConfirmationDialogOpen(false);
     setInspectionDialogOpen(false);
-    navigate('/');
+    navigate(catalogRoute());
   };
 
   // Make sure to close the dialog if the user clicks links in it that navigate
